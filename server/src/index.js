@@ -128,6 +128,13 @@ async function deleteOneFoodTruck(id) {
 };
 
 // 11. updateFoodTruckLocation(id, newLocation)
+async function updateFoodTruckLocation(id, newLocation) {
+  const result = await db.query(
+    "UPDATE food_trucks SET current_location = $1 WHERE id = $2",
+    [newLocation, id],
+  );
+  return result;
+}
 
 // 12. updateFoodTruckRating(id, newRating)
 
@@ -226,6 +233,13 @@ app.post('/delete-one-food-truck/:id', async (req, res) => {
 
 });
 // 11. POST /update-food-truck-location
+app.post("/update-food-truck-location", async (req, res) => {
+  const id = req.body.id;
+  const newLocation = req.body.newLocation;
+
+  await updateFoodTruckLocation(id, newLocation);
+
+  res.send("Success! The food truck location was updated!");
+});
 
 // 12. POST /update-food-truck-rating
-
