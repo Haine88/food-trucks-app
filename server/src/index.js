@@ -36,6 +36,12 @@ async function getAllFoodTrucks() {
 // 4. getFoodTrucksByPrice(price)
 
 // 5. getTopRatedFoodTrucks()
+async function getTopRatedFoodTrucks() {
+  const result = await db.query(
+    "SELECT * FROM food_trucks WHERE rating >= 4.5"
+  );
+  return result.rows;
+}
 
 // 6. getFoodTrucksSortedByRating()
 
@@ -95,6 +101,10 @@ app.get("/get-all-food-trucks", async (req, res) => {
 // 4. GET /get-food-trucks-by-price/:price
 
 // 5. GET /get-top-rated-food-trucks
+app.get("/get-top-rated-food-trucks", async (req, res) => {
+  const trucks = await getTopRatedFoodTrucks();
+  res.json(trucks);
+});
 
 // 6. GET /get-food-trucks-sorted-by-rating
 
