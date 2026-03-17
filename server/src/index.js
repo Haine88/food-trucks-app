@@ -243,3 +243,34 @@ app.post("/update-food-truck-location", async (req, res) => {
 });
 
 // 12. POST /update-food-truck-rating
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+✨💖🐼 Secret message from Nicole 🐼💖✨
+Why did the programmer quit their job? Because they didn't get arrays :)
