@@ -24,7 +24,11 @@ app.listen(port, () => {
 // ---------------------------------
 
 // 1. getAllFoodTrucks()
-
+async function getAllFoodTrucks() {
+  // counts total number of rows in food-trucks table
+  const result = await db.query("SELECT * FROM food_trucks;");
+  return result.rows;
+}
 
 // 2. getFoodTruckById(id)
 
@@ -69,7 +73,10 @@ async function getFoodTrucksSortedByRating() {
 // ---------------------------------
 
 // 1. GET /get-all-food-trucks
-
+app.get("/get-all-food-trucks", async (req, res) => {
+  const trucks = await getAllFoodTrucks();
+  res.json(trucks);
+});
 
 // 2. GET /get-food-truck-by-id/:id
 
