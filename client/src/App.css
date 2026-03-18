@@ -76,3 +76,64 @@ form button {
   font-size: 1rem;
   cursor: pointer;
 }
+
+
+/* Home page */
+.home {
+  padding: 2rem;
+}
+
+/* Truck count */
+.truck-count {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #b05070;
+  margin-bottom: 2rem;
+}
+
+/* Grid layout - 4 columns */
+.truck-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* Cards */
+.truck-card {
+  background-color: #fff0f3;
+  border: 2px solid #f4a7b9;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(240, 150, 170, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.truck-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(240, 150, 170, 0.5);
+}
+
+/* Card title */
+.truck-card h2 {
+  font-size: 1.1rem;
+  color: #c2185b;
+  text-align: center;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #f4a7b9;
+  padding-bottom: 0.5rem;
+}
+
+/* Card text */
+.truck-card p {
+  font-size: 0.85rem;
+  margin: 0.4rem 0;
+  color: #555;
+}
+
+/* Card labels */
+.truck-card span {
+  font-weight: 700;
+  color: #ad1457;
+}
